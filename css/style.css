@@ -1,0 +1,397 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Glitch&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo&family=Libre+Baskerville&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Glitch&display=swap');
+
+:root{
+    --primary-color: red;
+    --primary-color-contrast: white;
+    --field-background-color:black;
+}
+
+.light-theme{
+    --page-background: linear-gradient(
+        180deg,
+        #cecece 0%,
+        #d8d8d8 65%,
+        #cecece 100%
+    );
+    --header-background-color: #cecece;
+    --highlight-color:black;
+    --featured-font-family:"Archivo",sans-serif;
+    --character-top-image-src: url("../img/logo.svg");
+    --character-top-image-color:white;
+    --character-bottom-image-src: url("/img/charada.jfif");
+    --character-bottom-image-collor:white;
+    --background-lamp-image: url("../img/batman.png") ;
+    --footer-background-color:gray;
+
+}
+.dark-theme{
+    --page-background: linear-gradient(
+        180deg,
+        black 0%,
+        black 65%,
+        rgba(19,1,1,0.75) 100%
+    );
+    --header-background-color: black ;
+    --highlight-color:white;
+    --featured-font-family:"Rubik Glitch",sans-serif;
+    --character-top-image-src: url("/img/logo.svg");
+    --character-top-image-color:rgba(255,255,255,0.1);
+    --character-bottom-image-src: url("/img/charada.jfif");
+    --character-bottom-image-collor:black;
+    --background-lamp-image: url("/img/batman.png") ;
+    --footer-background-color:black;
+
+}
+
+
+*{
+    margin:0;
+    box-sizing: border-box;
+
+}
+
+h1,h2,h3{
+    font-family: var(--featured-font-family);
+    font-size: 3rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    margin-bottom:40px ;
+
+}
+
+p{
+    color: var(--highlight-color);
+}
+p,
+input,
+textarea{
+    font-family: "Libre Baskerville",serif;
+}
+
+button{
+    padding: 16px 32px;
+    background-color: transparent;
+    font-weight: 900;
+    font-family: var(--featured-font-family);
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    align-self: center;
+    transition: background 1s;
+    margin-left: 22%;
+}
+input,textarea{
+    border: 2px solid var(--primary-color-contrast);
+    background-color: var(--field-background-color);
+    color: var(--primary-color-contrast);
+    padding: 8px;
+    margin-bottom: 24px;
+    font-size: 1rem;
+}
+label{
+    margin-bottom: 8px;
+}
+
+input:focus-visible,
+textarea:focus-visible{
+    outline: none;
+    border-color: black;
+}
+
+header{
+    background-color: var(--header-background-color);
+    min-height: 850px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    
+   
+}
+.world-characters {
+    content: "";
+    width: 1280px;
+  
+    position: absolute;
+   background-image:url("../img/gothan.webp");
+    background-repeat:no-repeat ;
+    background-size: cover;
+    background-position: center 90%;
+     filter:saturate(0);
+     opacity:0.2;
+     bottom: 10px;
+   
+}
+.header-content{
+    max-width: 700px;
+    padding: 80px 20px;
+    align-items: center;
+    z-index: 2;
+}
+
+.header-content  img {
+    width: 80%;
+}
+.header-content p{
+    margin: 30px 0 50px;
+
+}
+.header-content button{
+    border: 3px solid var(--primary-color);
+    color:var(--primary-color);
+    align: center;
+
+}
+.header-content button:hover{
+    background-color: var(--primary-color);
+    color: var(--primary-color-contrast);
+}
+
+/*.world-characters{
+    width: 100%;
+    max-width: 900px;
+    position: absolute;
+
+}*/
+
+.world-characters#top-characters{
+    height: 100%;
+    background-color: var(--character-top-image-color);
+    
+    mask: var(--character-top-image-src) bottom / 100% no-repeat;
+    --webkit-mask: var(--character-top-image-src) bottom / 100% no-repeat;
+
+}
+
+main::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: var(--page-background) no-repeat,
+        url("../img/gothan.webp") no-repeat;
+        background-size: cover;
+        z-index: -1;
+}
+main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+section{
+    display: flex;
+    justify-content:  space-between;
+    margin-bottom: 100 px;
+}
+.container{
+    max-width: 1300px;
+   
+}
+
+/*#section-invert-world{
+ 
+ 
+
+}*/
+#section-invert-world .section-texts{
+    width: 100%;
+    
+    
+ 
+    
+}
+#section-invert-world .section-texts h2 {
+    max-width: 320px;
+    
+    
+}
+#section-invert-world .section-texts p{
+    margin-left: 0s;
+    align-items: baseline;
+}
+
+
+#section-batman-trailer{
+    display: flex;
+    justify-content: space-between;
+    padding: 100px;}
+#section-batman-trailer .section-texts{
+    width: 320px;
+    margin-left: 420px;
+
+}
+#section-batman-trailer .section-texts h2{
+    max-width:  425px;
+    
+    display: inline-block;
+}
+#section-batman-trailer .video-frame{
+    background-color: var(--primary-color);
+    
+    
+
+}
+#section-batman-trailer .video-frame iframe{
+    position: relative;
+    bottom: 2px;
+    left: -15px;
+    border: 10px;
+    border-image: linear-gradient(
+        var(--primary-color),
+        var(--primary-color-contrast)
+    );
+    border-image-slice: 10;
+}
+ 
+.invert-element-main{
+    width: 250px;
+}
+#section-batman-gallery{
+    margin-top: 100px;
+    width: 100%;
+    justify-content: CENTER;
+   
+    
+}
+
+#section-batman-gallery .container{
+    width: 100%;
+}
+#section-batman-gallery .container h2{
+    width: 800px;
+}
+
+#section-batman-gallery .gallery-container{
+    display: flex;
+    gap: 50px;
+    padding-left: 20px;
+}
+#section-batman-gallery .gallery-image{
+    width: 250px;
+    height: 250px;
+    outline: 20px solid var(--highlight-color);
+    border: 3px solid var(--primary-color);
+    box-sizing: initial;
+}
+
+#section-batman-gallery .gallery-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 10px solid var(--highlight-color);
+}
+
+#section-form{
+    margin-top: 100px;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    text-align: center;
+    margin-bottom: 100px;
+}
+#section-form h2{
+    width: 600px;
+}
+
+#section-form h3{
+    color: var(--highlight-color);
+    flex-basis: 30%;
+    text-align: left;
+    margin: 0;
+
+}
+#section-form h3 span{
+    color: var(--primary-color);
+
+}
+#section-form .form-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+#section-form .form-container{
+    flex-basis: 50%;
+    position: relative;
+
+}
+#section-form .form-container::after{
+    content: "";
+    background-color: var(--highlight-color);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    z-index: -1;
+
+}
+
+#section-form .form-container form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 24px;
+    background-color: var(--primary-color);
+    color: var(--primary-color-contrast);
+    text-align: left;
+}
+
+#section-form .form-container form button{
+    border: none;
+    background-color: var(--field-background-color);
+    color: var(--primary-color-contrast);
+    max-width: 300px;
+    align-self: center;
+}
+#section-form .form-container form button:hover{
+    background-color: var(--primary-color-contrast);
+    color: var(--field-background-color);
+}
+
+footer{
+    padding: 60px 0;
+    background-color: var(--footer-background-color);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+
+}
+
+footer p{
+    max-width: 700px;
+    margin-bottom: 24px;
+
+}
+
+footer::before,
+footer::after{
+    content: "";
+    width: 300px;
+    height: 200px;
+   
+    background-size: contain;
+    position: absolute;
+    bottom: -30px;
+
+
+}
+
+footer::before{
+    left: -50px;
+    transform: rotateZ(-10deg);
+    z-index: -1;
+}
+
+footer::after{
+    left: -50px;
+    transform: rotateZ(-10deg);
+    
+}
